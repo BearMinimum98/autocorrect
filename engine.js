@@ -169,7 +169,7 @@ function getList(url) {
 	};
 	request.send(null);
 	try {
-		return request.response.split("~");
+		return request.response.split("\n");
 	}
 	catch(e) {
 		throw new Error("Could not get server response or server response in bad format.");
