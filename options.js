@@ -27,8 +27,7 @@ window.onload = function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
 		}, false);
 		document.getElementById("exportList").addEventListener("click", function() {
-			var b = new Blob([exportList()]);
-			saveAs(b, "exportlist.txt");
+			alert(exportList());
 		}, false);
 	}
 	firstLoad = false;
@@ -96,7 +95,7 @@ function exportList() {
 	var list = "";
 	for (var i = 0; i < document.getElementById("wordList").length; i++) {
 		list += document.getElementById("wordList")[i].innerHTML;
-		list += "~";
+		list += "\n";
 	}
 	return list;
 }
