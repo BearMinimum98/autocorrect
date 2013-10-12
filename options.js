@@ -4,7 +4,7 @@ window.onload = function() {
 		document.getElementById("addButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = autoCorrectChromeExtension.addAutoCompleteWord(document.querySelector('#searchText').value.toLowerCase(), document.querySelector('#replaceText').value);
 		}, false);
-		document.getElementById("removeButton").addEventListener("click", function() {
+		/*document.getElementById("removeButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = onRemove();
 		}, false);
 		document.getElementById("removeAllButton").addEventListener("click", function() {
@@ -25,7 +25,7 @@ window.onload = function() {
 		}, false);
 		document.getElementById("findCorrectionButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
-		}, false);
+		}, false);*/
 		document.getElementById("exportList").addEventListener("click", function() {
 			var b = new Blob([exportList()]);
 			saveAs(b, "exportlist.txt");

@@ -187,3 +187,9 @@ button.action:active .label {
 button.bluebtn:active .label, button.greenbtn:active .label, button.redbtn:active .label {
 	color: #FFF !important;
 }
+button.addButton {
+	height: 100px;
+}
+button.exportList{
+	margin-bottom: 10px;
+}
