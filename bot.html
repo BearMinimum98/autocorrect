@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A (very simple) MouseHunt bot</title>
+		<style>
+			iframe {
+				overflow: hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			//BEGIN MH BOT CODE
+
+			//Don't want to clutter up global namespace
+			var mhBotOptions = {
+				//15 minutes
+				hornSoundTime: 1000*60*15,
+				//Delay in milliseconds.
+				minDelay: 5000,
+				maxDelay: 10000,
+				timeout: null
+			};
+			var waitTime;
+			var waitInterval;
+			var theTime;
+			//Just for sounding horn, no delay here.
+			function soundHorn(elementRef) {
+				if (elementRef.tagName.toLowerCase() == "iframe") {
+					//It's an iframe, lets do work!
+					//Legacy URL for browsers without JS, perfect for our needs.
+					elementRef.src="http://mousehuntgame.com/canvas/turn.php";
+				}
+			}
+			function wait(options) {
+				var generatedRandom = mhBotOptions.hornSoundTime + generateRandom(options.minDelay, options.maxDelay);
+				options.timeout = setTimeout("document.getElementById('start').click();", generatedRandom);
+				//We need this to tell user how long until next horn sound.
+				waitTime = generatedRandom;
+			}
+			function generateRandom(lowerBound, upperBound) {
+				var random = Math.floor(Math.random() * (upperBound - lowerBound));
+				return random + lowerBound;
+			}
+			function changeStatus(msg) {
+				document.getElementById('status').innerHTML = msg;
+			}
+			function begin() {
+				//OK kiddos, lets use the Date object
+				theTime = new Date();
+				waitInterval = setInterval("var curTime = new Date();var diff = curTime.valueOf() - theTime.valueOf();var waitTimeLeft = Math.floor((waitTime - diff)/1000);document.getElementById('timeLeft').innerHTML = Math.floor(waitTimeLeft/60) + \" minute(s) \" + Math.floor(waitTimeLeft % 60) + \" second(s)\";", 1000);
+			}
+			function pause() {
+				clearInterval(waitInterval);
+				document.getElementById('timeLeft').innerHTML = "N/A";
+			}
+		</script>
+	</head>
+	<body style="font-family:verdana;">
+		<h1 style="text-align:center;">A (very simple) MouseHunt bot</h1>
+		<div id="wrapper">
+			<div style="position:absolute;width:49%;height:80%;border:solid #c3c3c3 1px;" id="options">
+				<div id="control">
+					<h3 style="text-align:center;">Bot control</h3>
+					<button id="start" onclick="clearTimeout(waitInterval);clearInterval(mhBotOptions.timeout);soundHorn(document.getElementById('mhBotWindow'));wait(mhBotOptions);begin();changeStatus('Bot started! Note that the countdown on the MH page will not move as this bot disables JavaScript on the MH page to avoid detection.');">Start the bot!</button>
+					<button id="stop" onclick="clearTimeout(mhBotOptions.timeout);clearTimeout(waitInterval);pause();changeStatus('Bot stopped!');">Stop the bot!</button>
+				</div>
+				<div id="options">
+					<h3 style="text-align:center;">Options (takes effect on next horn sound)</h3>
+					<input type="text" size="5" id="minDelay" value="5000" /><button id="setMinDelay" onclick="mhBotOptions.minDelay = document.getElementById('minDelay').value;changeStatus('Minimum delay set!');">Set minimum delay time (in milliseconds)</button>
+					<br />
+					<input type="text" size="5" id="maxDelay" value="10000" /><button id="setMaxDelay" onclick="mhBotOptions.maxDelay = document.getElementById('maxDelay').value;changeStatus('Maximum delay set!');">Set maximum delay time (in milliseconds)</button>
+				</div>
+				<div style="padding-top:40px;">
+					Status: <span id="status">Bot ready! (If you get the choose a trap screen please open http://mousehuntgame.com/canvas in a new tab, wait for the redirect to Facebook, then close it)</span>
+				</div>
+				<div style="padding-top:40px;">
+					Time until next horn sound: <span id="timeLeft">N/A</span>
+				</div>
+			</div>
+			<div style="position:absolute;width:49%;height:80%;right:3px;border:solid #c3c3c3 1px;" id="botWindow">
+				<iframe src="http://mousehuntgame.com/canvas/" id="mhBotWindow" style="height:100%;width:100%" sandbox="" seamless="seamless" scrolling="no"></iframe>
+			</div>
+		</div>
+	</body>
+</html>
