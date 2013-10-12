@@ -1,4 +1,0 @@
-autocorrect
-===========
-
-Autocorrect for Chrome
