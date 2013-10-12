@@ -26,6 +26,9 @@ window.onload = function() {
 		document.getElementById("findCorrectionButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
 		}, false);
+		document.getElementById("exportList").addEventListener("click", function() {
+			alert(exportList());
+		}, false);
 	}
 	firstLoad = false;
 	document.querySelector("#wordList").options.length = 0;
