@@ -34,7 +34,6 @@ window.onload = function() {
 	}
 	firstLoad = false;
 	document.querySelector("#wordList").options.length = 0;
-	var allCorrections = autoCorrectChromeExtension.showAllCorrections;
 	try {
 		for (var i = 0; i < alphabet.length; i++) {
 			var theBigArray = localStorage[alphabet[i]].substring(1, localStorage[alphabet[i]].length-2).split('"').join("").split(",");
@@ -45,8 +44,7 @@ window.onload = function() {
 				}
 			}
 		}
-	}
-	catch(e) {
+	} catch(e) {
 		console.log("Non-fatal error: " + e.message);
 	}
 }
@@ -59,8 +57,7 @@ function onRemove() {
 		localStorage[firstChar] = JSON.stringify(parsedData);
 		window.onload();
 		return "Removed auto-correcting of " + toRemove;
-	}
-	catch(e) {
+	} catch(e) {
 		console.log("Non-fatal error: " + e.message);
 		return "Non-fatal error, see console for details";
 	}
