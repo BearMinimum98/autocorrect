@@ -25,6 +25,8 @@ var autoCorrectChromeExtension = {
 		var parsedData = JSON.parse(localStorage[firstChar]);
 		parsedData[word.toLowerCase()] = change.toString();
 		localStorage[firstChar] = JSON.stringify(parsedData);
+		document.querySelector("#searchText").value = "";
+		document.querySelector("#replaceText").value = "";
 		window.onload();
 		return "added";
 	},
