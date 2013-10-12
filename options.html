@@ -21,18 +21,25 @@
 			<legend>Word Substitution List</legend>
 			<ul id="substitution_list">
 				<li>
+                    <div>
 					<select id="wordList" size="10" multiple="multiple" style="width: 100%"> 
 					<td width="100%"><select id="wordList"  multiple="multiple" style="width: 100%"> 
 					</select>
+                    <button id="removeButton">Remove</button>
+                    <button id="removeAllButton">Remove All</button>
+                    <button id="exportList" class="exportList">Export List</button>
+                </div>
 				</li>
-				<br>
+				
 				<li>
+
 					<div id="instructions">
 					<p>Enter a typo to be replaced (no spaces allowed) and a word to replace it</p>
 					</div>
 				</li>
 
 				<li id="left">
+
 					Typo:<br><input id="searchText" type = "text">
 				</li>
 				<li id="left">
@@ -44,11 +51,12 @@
 			</ul>
 			<br>
 			</fieldset>
-		</div>
+            
+            </div>
 		<div id="action_panel">
-			<button id="exportList" class="exportList">Export List</button>
-			<button id="removeButton">Remove</button>
-			<button id="removeAllButton">Remove All</button>
+
+            <input id="findText" type="text" style = "width:300px;"/><button id="findTypoButton">Find typo</button><button id="findCorrectionButton">Find correction</button>
+
 		</div>
 	</div>
 </div>
