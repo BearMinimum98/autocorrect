@@ -27,7 +27,8 @@ window.onload = function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
 		}, false);
 		document.getElementById("exportList").addEventListener("click", function() {
-			alert(exportList());
+			var b = new Blob([exportList()]);
+			saveAs(b, "exportlist.txt");
 		}, false);
 	}
 	firstLoad = false;

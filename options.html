@@ -2,12 +2,96 @@
 <html lang="en">
 <head>
 <title>AutoCorrect - Options</title>
+<<<<<<< HEAD
 <link rel="stylesheet" href="scripts/reveal.css">
 <link rel="stylesheet" href = "scripts/options.css">
 <script src="scripts/jquery.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.reveal.js" type="text/javascript"></script>
+=======
+<style>
+body {
+  font-family:helvetica, arial, sans-serif;
+  font-size:80%;
+  margin:10px;
+}
+
+#header {
+  padding-bottom:1.5em;
+  padding-top:1.5em;
+}
+
+#header h1 {
+  font-size: 156%;
+  display:inline;
+  padding-bottom:43px;
+  padding-left:75px;
+  padding-top:40px;
+  /*background:url(voice-128.png) no-repeat;*/
+  background-size:67px;
+  background-position:1px 18px;
+}
+
+#footer {
+  margin-left: 24px;
+  margin-top: 12px;
+}
+
+.gc-settings-content {
+  margin: 6px 6px 0 6px;
+  padding: 10px 10px 10px 10px;
+  color: #333;
+  border: 1px solid #dedede;
+  -webkit-border-radius: 5px 5px;
+}
+
+.gc-settings-table {
+  width: 100%;
+  font-size: 1em;
+}
+
+.gc-settings-table .left,
+.gc-settings-table .right {
+  vertical-align: top;
+  border-bottom: 0 dotted #aaa;
+}
+
+.gc-settings-table th {
+  text-align: right;
+  width: 1%;
+  white-space: nowrap;
+  padding: 12px 24px 12px 12px;
+}
+
+.gc-settings-table td {
+  width: 99%;
+  white-space: nowrap;
+  padding: 12px;
+}
+
+.option-block {
+background-color: #E9ECEF;
+border: 1px solid #777;
+border-bottom-left-radius: 12px 12px;
+border-bottom-right-radius: 12px 12px;
+border-top-left-radius: 12px 12px;
+border-top-right-radius: 12px 12px;
+margin: 0px;
+padding: 10px;
+}
+
+.option-block td {
+	padding: 4px;
+}
+
+.option-tip {
+	font-size: 80%;
+}
+
+</style>
+>>>>>>> bbf2651168816f754f7a1f62a3e09acb95938122
 <script type="text/javascript" src="engine.js"></script>
 <script type="text/javascript" src="options.js"></script>
+<script type="text/javascript" src="scripts/filesaver.js"></script>
 </head>
 <body>
 
@@ -71,9 +155,4 @@
    </table>
 </div>
 </body>
-<div id="exportList" class="reveal-modal">
-     <h1>Word substitution list</h1>
-     <p id="listExport"></p><script type="text/javascript">document.getElementById("listExport").innerHTML = exportList();</script>
-     <a class="close-reveal-modal">&#215;</a>
-</div>
 </html>
