@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="scripts/reveal.css">
-<script src="scripts/jquery.min.js" type="text/javascript"></script>
-<script src="scripts/jquery.reveal.js" type="text/javascript"></script>
-</head>
 <title>AutoCorrect - Options</title>
+<script type="text/javascript" src="engine.js"></script>
+<script type="text/javascript" src="options.js"></script>
+<script type="text/javascript" src="scripts/filesaver.js"></script>
+</head>
 <style>
 body {
   font-family:helvetica, arial, sans-serif;
@@ -86,8 +86,6 @@ padding: 10px;
 }
 
 </style>
-<script type="text/javascript" src="engine.js"></script>
-<script type="text/javascript" src="options.js"></script>
 </head>
 <body>
 
@@ -146,14 +144,9 @@ padding: 10px;
 				</td>
 			</tr>
 		</table>
-	  </td>
+		</td>
 	</tr>
-   </table>
+	</table>
 </div>
 </body>
-<div id="exportList" class="reveal-modal">
-     <h1>Word substitution list</h1>
-     <p id="listExport"></p><script type="text/javascript">document.getElementById("listExport").innerHTML = exportList();</script>
-     <a class="close-reveal-modal">&#215;</a>
-</div>
 </html>
