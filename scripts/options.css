@@ -117,5 +117,15 @@ p {
 
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background: #999;
+    background-image: -webkit-linear-gradient(left, #999, #ccc, #999); 
+    background-image:    -moz-linear-gradient(left, #999, #ccc, #999); 
+    background-image:     -ms-linear-gradient(left, #999, #ccc, #999); 
+    background-image:      -o-linear-gradient(left, #999, #ccc, #999); 
+}
+
  * Network
  *----------------------------------------------------------------*/
