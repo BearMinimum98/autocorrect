@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AutoCorrect - Options</title>
-<link rel="stylesheet" href = "scripts/options.css">
-<link rel="stylesheet" href = "scripts/buttons.css">
-<script src="scripts/jquery.min.js" type="text/javascript"></script>
-<script src="scripts/jquery.reveal.js" type="text/javascript"></script>
-<script type="text/javascript" src="engine.js"></script>
-<script type="text/javascript" src="options.js"></script>
-<script type="text/javascript" src="scripts/filesaver.js"></script>
-
-
+	<title>AutoCorrect - Options</title>
+	<link rel="stylesheet" href = "scripts/options.css">
+	<link rel="stylesheet" href = "scripts/buttons.css">
+	<script src="scripts/jquery.min.js" type="text/javascript"></script>
+	<script src="scripts/jquery.reveal.js" type="text/javascript"></script>
+	<script type="text/javascript" src="engine.js"></script>
+	<script type="text/javascript" src="options.js"></script>
+	<script type="text/javascript" src="scripts/filesaver.js"></script>
 </head>
 
 <body>
-<div id= "wrapper">
-    <div id="header">
-        <h1>Autocorrect Options</h1>
-    </div>
-    <div id="options">
-        <fieldset id="options">
-            <legend>Word Substitution List</legend>
-            <ul id="substitution_list">
-    
-                    <li>
-                        <select id="wordList" size="10" multiple="multiple" style="width: 100%"> 
-                        <td width="100%"><select id="wordList"  multiple="multiple" style="width: 100%"> 
+	<div id= "wrapper">
+		<div id="header">
+			<h1>Autocorrect Options</h1>
+		</div>
+		<div id="options">
+			<fieldset id="options">
+			<legend>Word Substitution List</legend>
+			<ul id="substitution_list">
+				<li>
+					<select id="wordList" size="10" multiple="multiple" style="width: 100%"> 
+					<td width="100%"><select id="wordList"  multiple="multiple" style="width: 100%"> 
+					</select>
+				</li>
+				<br>
+				<li>
+					<div id="instructions">
+					<p>Enter a typo to be replaced (no spaces allowed) and a word to replace it</p>
+					</div>
+				</li>
 
-                        </select>
-                    </li>
-                    <br>
-
-                    <li>
-                        <div id="instructions">
-                            <p>Enter a typo to be replaced (no spaces allowed) and a word to replace it</p>
-                        </div>
-                    </li>
-
-                    <li id="left">
-                        Typo:<br><input id="searchText" type = "text">
-                    </li>
-                    <li id="left">
-                        Replace with:<br><input id="replaceText" type = "txt">
-                       
-                    </li>
-                    <li>
-                        <button id="addbutton" class="greenbtn"><span class="label">Add</span></button>
-
-                    </li>
-            </ul>
-            <br>
-        </fieldset>
-    </div>
-            <div id="action_panel">
-                <button id="exportList" class="exportList">Export List</button>
-                <button id="removeButton">Remove</button>
-                <button id="removeAllButton">Remove All</button>
-            </div>
-
-    </div>
+				<li id="left">
+					Typo:<br><input id="searchText" type = "text">
+				</li>
+				<li id="left">
+					Replace with:<br><input id="replaceText" type = "txt">
+				</li>
+				<li>
+					<button id="addbutton" class="greenbtn"><span class="label">Add</span></button>
+				</li>
+			</ul>
+			<br>
+			</fieldset>
+		</div>
+		<div id="action_panel">
+			<button id="exportList" class="exportList">Export List</button>
+			<button id="removeButton">Remove</button>
+			<button id="removeAllButton">Remove All</button>
+		</div>
+	</div>
 </div>
 </div>
 </body>
