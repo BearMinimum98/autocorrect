@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AutoCorrect - Options</title>
+<style>
+body {
+  font-family:helvetica, arial, sans-serif;
+  font-size:80%;
+  margin:10px;
+}
+
+#header {
+  padding-bottom:1.5em;
+  padding-top:1.5em;
+}
+
+#header h1 {
+  font-size: 156%;
+  display:inline;
+  padding-bottom:43px;
+  padding-left:75px;
+  padding-top:40px;
+  /*background:url(voice-128.png) no-repeat;*/
+  background-size:67px;
+  background-position:1px 18px;
+}
+
+#footer {
+  margin-left: 24px;
+  margin-top: 12px;
+}
+
+.gc-settings-content {
+  margin: 6px 6px 0 6px;
+  padding: 10px 10px 10px 10px;
+  color: #333;
+  border: 1px solid #dedede;
+  -webkit-border-radius: 5px 5px;
+}
+
+.gc-settings-table {
+  width: 100%;
+  font-size: 1em;
+}
+
+.gc-settings-table .left,
+.gc-settings-table .right {
+  vertical-align: top;
+  border-bottom: 0 dotted #aaa;
+}
+
+.gc-settings-table th {
+  text-align: right;
+  width: 1%;
+  white-space: nowrap;
+  padding: 12px 24px 12px 12px;
+}
+
+.gc-settings-table td {
+  width: 99%;
+  white-space: nowrap;
+  padding: 12px;
+}
+
+.option-block {
+background-color: #E9ECEF;
+border: 1px solid #777;
+border-bottom-left-radius: 12px 12px;
+border-bottom-right-radius: 12px 12px;
+border-top-left-radius: 12px 12px;
+border-top-right-radius: 12px 12px;
+margin: 0px;
+padding: 10px;
+}
+
+.option-block td {
+	padding: 4px;
+}
+
+.option-tip {
+	font-size: 80%;
+}
+
+</style>
+<script type="text/javascript" src="engine.js"></script>
+<script type="text/javascript" src="options.js"></script>
+</head>
+<body>
+
+<div id="header"><h1>AutoCorrect Options</h1></div>
+
+<div id="footer">
+  <button id="defaults-button" style="font-weight:bold" title="Restore settings to defaults">Restore Defaults</button>
+  <input type="text" id="subscription" value="http://" style="width:200px" /><button id="subscribe" style="font-weight:bold">Download word correction list</button>
+  <span id="status" style="margin-left: 10px; color: #0e5ecf; font-weight:bold;">Click <a href="http://tryiteditor.webs.com/list.txt" title="How to format an autocorrect list">here for a sample autocorrect list format file</a></span>
+</div>
+
+<div class="gc-settings-content">
+  <table class="gc-settings-table" id="tableContent">
+	<tr>
+	  <th class="left">Word substitution list</th>
+	  <td class="right">	
+        <table class="option-block" style="width: 550px;">
+			<tr>
+				<td>
+					<span class="option-tip">Enter the letter combination you want replaced (no spaces allowed)</span><br/>
+					<span class="option-tip">and the word or words that will replace it</span>
+				</td>
+			</tr>
+			<tr> 
+				<td style="width:100%"> 
+					<table style="width:100%"> 
+						<tr>
+							<td>Typo:</td>
+							<td>Replace with:</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><input id="searchText" type="text" style="width: 200px" /></td>
+							<td><input id="replaceText" type="text" style="width: 200px" /></td>
+							<td style="width:90%;"><button id="addButton">Add</button></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select id="wordList" size="15" multiple="multiple" style="width: 100%"> 
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="removeButton">Remove</button>
+					<button id="removeAllButton">Remove All</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input id="findText" type="text" style="width: 200px;" /><button id="findTypoButton">Find typo</button><button id="findCorrectionButton">Find correction</button>
+				</td>
+			</tr>
+		</table>
+	  </td>
+	</tr>
+   </table>
+</div>
+</body>
+</html>

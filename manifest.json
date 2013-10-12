@@ -1,0 +1,38 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "ac19.png",
+         "38": "ac38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "AutoCorrect for Google Chrome(TM)"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "engine.js" ],
+      "matches": [ "\u003Call_urls\u003E" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Autocorrects text while you type in most text fields. Still very experimental.",
+   "icons": {
+      "128": "ac128.png",
+      "16": "ac16.png",
+      "19": "ac19.png",
+      "32": "ac32.png",
+      "39": "ac39.png",
+      "48": "ac48.png",
+      "64": "ac64.png"
+   },
+   "incognito": "spanning",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQChWN3F0WNpqGTZ+5O0Iyau9fWDam9j1D9qT52fyax+5mZYvw0ARCCTcTkqzOvYwMit87WCgK/KhBeAWVs6ntRMeg2bynCRGhAufXTAMeBxqXXBxrMRXBczAJXY3TvZ7CUgKLQEry971T3e04VxUj0CuUBw7oao4Lu75ur98o3fHQIDAQAB",
+   "manifest_version": 2,
+   "name": "AutoCorrect for Google Chrome(TM)",
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "permissions": [ "\u003Call_urls\u003E", "unlimitedStorage", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.5"
+}
