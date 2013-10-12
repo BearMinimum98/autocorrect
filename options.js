@@ -95,7 +95,7 @@ function exportList() {
 	var list = "";
 	for (var i = 0; i < document.getElementById("wordList").length; i++) {
 		list += document.getElementById("wordList")[i].innerHTML;
-		list += "~";
+		list += "\n";
 	}
 	return list;
 }
