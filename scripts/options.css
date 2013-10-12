@@ -2,7 +2,7 @@
 body { 
     overflow-y:scroll !important;
     font:13px/1.5 Helvetica,arial,sans-serif;
-    background:#ccc url(../images/bg-pattern.png);
+    background:#ccc url(bg-pattern.png);
 }
 a   { text-decoration:none; }
 
