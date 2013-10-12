@@ -66,20 +66,15 @@ var autoCorrectChromeExtension = {
 							break;
 						}
 					}
+					autoCorrectChromeExtension.lastWordTyped = lastInput;
 					var firstChar = lastInput.charAt(0);
 					if (autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()]) {
 						if (firstChar == firstChar.toLowerCase()) {
-							console.log("Reached lowercase case in correction part");
-							autoCorrectChromeExtension.lastWordTyped = lastInput;
 							autoCorrectChromeExtension.lastCorrection = autoCorrectChromeExtension.list[firstChar][lastInput.toLowerCase()];
 							words[arrayEleNum] = autoCorrectChromeExtension.lastCorrection;
 							words[arrayEleNum + 1] = e.target.value.split(charCode)[arrayEleNum + 1];
 						}
 						else {
-							console.log("Reached uppercase case in correction part");
-							autoCorrectChromeExtension.lastWordTyped = lastInput;
-							console.log("First char to uppercase: " + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].charAt(0).toUpperCase());
-							console.log("Total word: " + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].charAt(0).toUpperCase() + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].substring(1, 1000));
 							autoCorrectChromeExtension.lastCorrection = autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].charAt(0).toUpperCase() + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].substring(1, 1000);
 							words[arrayEleNum] = autoCorrectChromeExtension.lastCorrection;
 							words[arrayEleNum + 1] = e.target.value.split(charCode)[arrayEleNum + 1];
@@ -124,7 +119,7 @@ var autoCorrectChromeExtension = {
 							}
 							delete autoCorrectChromeExtension.lastCorrection;
 							return;
-						} else {
+						} else if (autoCorrectChromeExtension.lastCorrection == autoCorrectChromeExtension.list[autoCorrectChromeExtension.lastWordTyped.charAt(0).toLowerCase()][autoCorrectChromeExtension.lastWordTyped.toLowerCase()] && (e.target.value[e.target.value.length - 1] != " " && e.target.value[e.target.value.length - 1] != "." && e.target.value[e.target.value.length - 1] != ",")) {
 							var interestedPart = e.target.value.substring(e.target.selectionStart - autoCorrectChromeExtension.lastCorrection + 1, e.target.selectionStart);
 							var interestedPart = autoCorrectChromeExtension.lastWordTyped;
 							e.target.value = e.target.value.substring(0, e.target.selectionStart - autoCorrectChromeExtension.lastCorrection.length) + interestedPart + autoCorrectChromeExtension.lastPunc + e.target.value.substring(e.target.selectionStart + autoCorrectChromeExtension.lastWordTyped.length, e.target.value.length);
