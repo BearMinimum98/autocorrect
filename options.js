@@ -4,13 +4,13 @@ window.onload = function() {
 		document.getElementById("addButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = autoCorrectChromeExtension.addAutoCompleteWord(document.querySelector('#searchText').value.toLowerCase(), document.querySelector('#replaceText').value);
 		}, false);
-		/*document.getElementById("removeButton").addEventListener("click", function() {
+		document.getElementById("removeButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = onRemove();
 		}, false);
 		document.getElementById("removeAllButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = removeAllOptions();
 		}, false);
-		document.getElementById("subscribe").addEventListener("click", function() {
+		/*document.getElementById("subscribe").addEventListener("click", function() {
 			autoCorrectChromeExtension.addList(document.querySelector('#subscription').value);
 			window.onload();
 		}, false);
