@@ -10,12 +10,12 @@ window.onload = function() {
 		document.getElementById("removeAllButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = removeAllOptions();
 		}, false);
-		/*
+		
 		document.getElementById("subscribe").addEventListener("click", function() {
 			autoCorrectChromeExtension.addList(document.querySelector('#subscription').value);
 			window.onload();
 		}, false);
-		document.getElementById("defaults-button").addEventListener("click", function() {
+		/*document.getElementById("defaults-button").addEventListener("click", function() {
 			chrome.extension.sendRequest("list", function (response) {
 				document.querySelector('#status').innerHTML = autoCorrectChromeExtension.replaceAutoCompleteFile(response);
 				window.onload();
