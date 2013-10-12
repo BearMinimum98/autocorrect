@@ -78,6 +78,7 @@ var autoCorrectChromeExtension = {
 						else {
 							console.log("Reached uppercase case in correction part");
 							autoCorrectChromeExtension.lastWordTyped = lastInput;
+							console.log("First char to uppercase: " + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()]);
 							autoCorrectChromeExtension.lastCorrection = autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()];
 							//autoCorrectChromeExtension.lastCorrection = autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].charAt(0).toUpperCase() + autoCorrectChromeExtension.list[firstChar.toLowerCase()][lastInput.toLowerCase()].substring(1, 1000);
 							words[arrayEleNum] = autoCorrectChromeExtension.lastCorrection;
