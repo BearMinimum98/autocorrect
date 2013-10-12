@@ -27,7 +27,7 @@ window.onload = function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
 		}, false);
 		document.getElementById("exportList").addEventListener("click", function() {
-			alert(exportList());
+			alert(exportList()); 
 		}, false);
 	}
 	firstLoad = false;
