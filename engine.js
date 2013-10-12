@@ -3,6 +3,7 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 //Define autoCorrect
 var autoCorrectChromeExtension = {
+	e:"",
 	list : {},
 	lastPunc : "",
 	lastCorrection : "",
@@ -43,6 +44,9 @@ var autoCorrectChromeExtension = {
 			allOfEle = document.getElementsByTagName(ele);
 		}
 		for (var i = 0; i < allOfEle.length; i++) {
+			allOfEle[i].addEventListener("keydown", function(e){
+				autoCorrectChromeExtension.e = window.getSelection().type;
+			}, false);
 			allOfEle[i].addEventListener("keyup", function (e) {
 				var charCode;
 				if (e.keyCode == 32 || String.fromCharCode(e.keyCode) == "¼" || String.fromCharCode(e.keyCode) == "¾" /*|| String.fromCharCode(e.keyCode) == ":" || String.fromCharCode(e.keyCode) == ";" || String.fromCharCode(e.keyCode) == ")" || String.fromCharCode(e.keyCode) == "?"*/) {
@@ -88,7 +92,7 @@ var autoCorrectChromeExtension = {
 					}
 				}
 				else if (e.keyCode == 8) {
-					if (autoCorrectChromeExtension.lastCorrection != null && typeof window.getSelection === undefined) {					
+					if (autoCorrectChromeExtension.lastCorrection != null && autoCorrectChromeExtension.e === "Caret") {					
 						if (autoCorrectChromeExtension.lastCorrection.length == autoCorrectChromeExtension.lastWordTyped.length) {
 							var copyOfTargetValue = e.target.value;
 							var seleStart = e.target.selectionStart;

@@ -10,7 +10,8 @@ window.onload = function() {
 		document.getElementById("removeAllButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = removeAllOptions();
 		}, false);
-		/*document.getElementById("subscribe").addEventListener("click", function() {
+		/*
+		document.getElementById("subscribe").addEventListener("click", function() {
 			autoCorrectChromeExtension.addList(document.querySelector('#subscription').value);
 			window.onload();
 		}, false);
@@ -19,13 +20,13 @@ window.onload = function() {
 				document.querySelector('#status').innerHTML = autoCorrectChromeExtension.replaceAutoCompleteFile(response);
 				window.onload();
 			});
-		}, false);
+		}, false);*/
 		document.getElementById("findTypoButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "typo");
 		}, false);
 		document.getElementById("findCorrectionButton").addEventListener("click", function() {
 			document.querySelector('#status').innerHTML = findWord(document.getElementById("findText").value, "correction");
-		}, false);*/
+		}, false);
 		document.getElementById("exportList").addEventListener("click", function() {
 			var b = new Blob([exportList()]);
 			saveAs(b, "exportlist.txt");
