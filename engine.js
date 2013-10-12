@@ -86,7 +86,7 @@ var autoCorrectChromeExtension = {
 					}
 				}
 				else if (e.keyCode == 8) {
-					if (autoCorrectChromeExtension.lastCorrection != null) {					
+					if (autoCorrectChromeExtension.lastCorrection != null && typeof window.getSelection === undefined) {					
 						if (autoCorrectChromeExtension.lastCorrection.length == autoCorrectChromeExtension.lastWordTyped.length) {
 							var copyOfTargetValue = e.target.value;
 							var seleStart = e.target.selectionStart;
