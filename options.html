@@ -3,6 +3,7 @@
 <head>
 <title>AutoCorrect - Options</title>
 <link rel="stylesheet" href = "scripts/options.css">
+<link rel="stylesheet" href = "scripts/buttons.css">
 <script src="scripts/jquery.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.reveal.js" type="text/javascript"></script>
 
@@ -20,15 +21,16 @@
             <ul id="substitution_list">
     
                     <li>
-                    <div id="instructions">
-                        <p>Enter a typo to be replaced (no spaces allowed) and a word to replace it</p>
-                    </div>
-                    </li>
-                    <li>
                         <td width="100%"><select id="wordList"  multiple="multiple" style="width: 100%"> 
                         </select>
                     </li>
                     <br>
+
+<li>
+                    <div id="instructions">
+                        <p>Enter a typo to be replaced (no spaces allowed) and a word to replace it</p>
+                    </div>
+                    </li>
 
                     <li id="left">
                         Typo:<br><input id="searchText" type = "text">
@@ -39,7 +41,7 @@
                     </li>
                     <li>
                         <br>
-                        <button id="addbutton">Add</button>
+                        <button id="addbutton" class="greenbtn"><span class="label">Add</span></button>
                     </li>
             </ul>
             <br>
