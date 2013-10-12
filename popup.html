@@ -2,16 +2,18 @@
 <html>
 	<head>
 		<title>AutoCorrect Popup</title>
+		<link rel="stylesheet" href = "scripts/buttons.css">
 		<script type="text/javascript" src="engine.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
 	</head>
 	<body style="font-family:arial;font-size:16px;">
+		<div align="right"><button id="openOptions" class="action greenbtn"><span class="label">Options</span></button></div>
 		<h4>Quick add</h4>
-		<div>Replace: <input type="text" id="incorrect" size="30" /> with: <input type="text" id="correct" size="30" /><button id="add">Add correction</button></div>
+		<div>Replace: <input type="text" id="incorrect" size="30" /> with: <input type="text" id="correct" size="30" />
+<button id="add" class="action bluebtn"><span class="label">Add correction</span></button></div>
 		<div id="status"></div>
-		<hr />
-		<div><button id="init">Reinitialize AutoCorrect</button></div>
-		<hr />
-		<div><button id="openOptions">Options</button></div>
+		<br><hr />
+		<div><button id="init" class="action redbtn"><span class="label">Reinitialize AutoCorrect</span></button></div>
+		<br><hr />
 	</body>
 </html>
