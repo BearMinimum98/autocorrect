@@ -32,5 +32,5 @@
    "offline_enabled": true,
    "options_page": "options.html",
    "permissions": [ "<all_urls>", "unlimitedStorage", "tabs" ],
-   "version": "1.1"
+   "version": "1.1.1"
 }

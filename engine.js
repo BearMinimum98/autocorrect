@@ -150,7 +150,7 @@ var autoCorrectChromeExtension = {
 	//This function meant to be used in options.html
 	addList : function (url) {
 		document.querySelector('#status').innerHTML = "Processing... This may take a couple minutes depending on file size";
-		setTimeout(function() {try {var listSource = getList(url);for (var i = 0; i < listSource.length; i++) {var parsed = listSource[i].split(":");autoCorrectChromeExtension.addAutoCompleteWord(parsed[0], parsed[1]);}document.querySelector('#status').innerHTML = "Add complete!";} catch (e) {throw new Error(e);}}, 0);
+		setTimeout(function() {try {var listSource = getList(url);for (var i = 0; i < listSource.length; i++) {var parsed = listSource[i].split(":");autoCorrectChromeExtension.addAutoCompleteWord(parsed[0], parsed[1]);}document.querySelector("#status").innerHTML = "Add complete!";} catch (e) {document.querySelector("#status").innerHTML = "Add complete!";throw new Error(e);}}, 0);
 	},
 	init : function () {
 		try {
